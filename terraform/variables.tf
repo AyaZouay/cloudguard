@@ -30,5 +30,5 @@ variable "alert_email" {
 variable "bedrock_model_id" {
   description = "Bedrock model ID used for anomaly detection"
   type        = string
-  default = "us.anthropic.claude-haiku-4-5-20251001-v1:0"
+  default     = "us.anthropic.claude-haiku-4-5-20251001-v1:0"
 }
