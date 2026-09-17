@@ -31,15 +31,18 @@ something looks wrong, not just that a number crossed a line.
 
 ## Architecture
 
+```
 Log Generator (local script)
-|
-v
+        |
+        v
 CloudWatch Logs -----> Subscription Filter -----> Lambda
-|
-v
-AWS Bedrock (Claude Haiku 4.5)
-|
-anomaly? --yes--> SNS --> Email
+                                                      |
+                                                      v
+                                              AWS Bedrock
+                                              (Claude Haiku 4.5)
+                                                      |
+                                              anomaly? --yes--> SNS --> Email
+```
 
 
 ## Stack
@@ -80,7 +83,7 @@ automatically without review.
 ✅ CI/CD pipeline with manual approval gate
 ✅ Datadog monitoring dashboard
 
-![Dashboard](docs/dashboard.png)
+![CloudGuard Datadog Dashboard](docs/dashboard.png)
 
 Tracks Lambda invocations, duration, and errors, confirming the pipeline
 runs reliably with no failures during testing.
